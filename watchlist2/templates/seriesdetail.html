@@ -1,0 +1,51 @@
+{% extends 'navfoot.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css\seriesdetail.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <title>Detailview</title>
+</head>
+<body>
+
+
+<div class="deta1">
+    <div class="card mb-3" style="width:1000px;height:500px;display:flex;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{object.image_url}}" class="img-fluid rounded-start" alt="..." style="height:500px;width:500px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body" style="padding-top:75px;">
+                    <div class="title1"><h1 class="card-title"><strong>{{object.Name}}</strong></h1></div>
+                    <p>Director : {{object.Director }}</p>
+                    <p class="actor1" style="color:Black;">Starring {{object.Actors}}</p>
+                    <p class="card-text">{{object.Description}}</p>
+                    <p class="price1" style="color:Black;">Year : {{object.Year}}</p>
+                    <p class="Lang1" style="color:Black;">Language : {{object.Language}}</p>
+                    <p class="rating1" style="color:Black;">Genre :{{object.Genre}}</p>
+                    <p class="rating1" style="color:Black;">Rating :{{object.Rating}}</p>
+                    
+                    
+
+                   
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}
+

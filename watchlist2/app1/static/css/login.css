@@ -1,0 +1,49 @@
+.loginn{
+    border-radius: 10px;
+    background-color: #2bd3e9;
+    width:600px;
+    height:350px;
+    margin-left:500px;
+    margin-top:240px;
+    padding-top:90px;
+    padding-left: 180px;
+    padding-bottom:100px;
+    
+    }
+    
+    .fom{
+    font-size:20px;
+    
+    }
+    
+    button{
+    background-color: hsl(0, 0%, 100%);
+    margin-left:100px;
+    border-radius:4px;
+    height:30px;
+    font-size:20px;
+    color: #000000;
+    border: none;
+    font-weight: bold;
+    
+    }
+    button:hover{
+    background-color: #e21313;
+    color:rgb(255, 255, 255);
+    
+    }
+    
+    input{
+    width:200px;
+    height:30px;
+    font-size:20px;
+    }
+    
+    h3{
+    font-size:30px;
+    padding-left:80px;
+    }
+    .cana:hover{
+    color:red;
+    }
+   

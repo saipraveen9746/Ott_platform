@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css\navfoot.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR2DO6FfqJRl5D0S5k9x5CI/9Fy6Zqn7u8F5t9z1F4C" crossorigin="anonymous"></script>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="background-color:#001933;">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list' %}" style="color: white;"><i class="fas fa-home"></i> <b>Home</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'series' %}" style="color: white;"><i></i> <b>Series</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'hgratedm' %}" style="color: white;"><i></i> <b>Top-rated movies</b></a>
+                </li>
+                
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                    <b>Language</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'mallu' %}"><b>Malayalam</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'twood' %}"><b>Tamil</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'bwood' %}"><b>Hindi</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'tewood'%}"><b>Telugu</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'owood' %}"><b>other</b></a></li>
+                    </ul>
+                </li>
+                <li class="user-nav">
+                    <select onchange="window.location.href=this.value;" style="margin-top:10px;background-color:#001933;color:white;border:none;font-weight: bold;">
+                                    {% if user.is_authenticated %}
+                                    <option value="" selected disabled><b>{{ user }}</b></option>
+                                    <option value="{% url 'logout' %}"><b>Logout</b></option>
+                                    {% else %}
+                                    <option value="" selected disabled><b>{{ user }}</b></option>
+                                    <option value="{% url 'signnup' %}"><b>SignUp</b></option>
+                                    <option value="{% url 'login' %}"><b>Login</b></option>
+                                    {% endif %}
+                    </select>
+                 </li>
+            
+
+            </ul>
+            
+            <form class="d-flex" role="search" action="{% url 'search'%}" method="get">
+                <input class="form-control me-2" name="q" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline" style="color: white; border: 2px solid white; " type="submit">Search
+                </button>
+
+            </form>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+
+{% endblock content %}
+<script>
+    // Initialize Bootstrap JavaScript components
+    $(document).ready(function () {
+        $('[data-bs-toggle="dropdown"]').dropdown();
+    });
+</script>
+
+<footer class="big-footer">
+    <div class="footer-section">
+        <h4>Explore</h4>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="movies">Movies</a></li>
+            <li><a href="tv-shows">TV Shows</a></li>
+            <li><a href="genres">Genres</a></li>
+            <li><a href="search">Search</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+            <li><a href="contact-us">Contact Us</a></li>
+            <li><a href="customer-service">Customer Service</a></li>
+            <li><a href="faq">FAQ</a></li>
+            <li><a href="privacy-policy">Privacy Policy</a></li>
+            <li><a href="terms-of-service">Terms of Service</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="social-icons">
+            <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+    </div>
+
+
+    <div class="footer-section">
+        <h4>Languages</h4>
+        <ul>
+            <li><a href="language/english">English</a></li>
+            <li><a href="language/spanish">Spanish</a></li>
+            <li><a href="language/french">French</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+            <li>Stream thousands of movies and TV shows</li>
+            <li>Personalized recommendations</li>
+            <li>Create and manage playlists</li>
+            <li>View trailers and ratings</li>
+            <li>Bookmark favorite movies and shows</li>
+            <li>HD streaming quality</li>
+            <li>Ad-free experience</li>
+        </ul>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

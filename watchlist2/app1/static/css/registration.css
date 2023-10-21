@@ -1,0 +1,35 @@
+.center{
+    margin: auto;
+    width: 50%;
+    background-color: #2bd3e9;
+    padding-top:30px;
+    padding-left: 30px;
+    height:500px;
+  }
+  
+  .head{
+  padding-bottom:25px;
+  text-align:center;
+  font-family: "Times New Roman", Times, serif;
+  font-size:60px;
+  }
+  .fom{
+  font-family: "Times New Roman", Times, serif;
+  }
+  .bu{
+  background-color: #eff8f0;
+  border:none;
+  margin-top:50px;
+  margin-left:40%;
+  width:100px;
+  height:40px;
+  border-radius:5px;
+  font-family: "Times New Roman", Times, serif;
+  
+  
+  }
+  
+  .bu:hover{
+  background-color: #e21313;
+  }
+  

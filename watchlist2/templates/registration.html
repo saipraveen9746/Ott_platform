@@ -1,0 +1,28 @@
+{% extends 'navfoot.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css\registration.css' %}">
+</head>
+<body>
+<br><br><br>
+<div class="center">
+    <p class="head">Sign up</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="fom"><strong>{{form.as_p}}</strong></div>
+        <button class="bu"><b>Sign up</b></button>
+    </form>
+</div>
+
+</body>
+</html>
+{% endblock content%}
+
+
+
+

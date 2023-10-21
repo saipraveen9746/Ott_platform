@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="list-group">
+    {% if wishlist_items%}
+    <h2>watchlist</h2>
+
+</div>
+<ul class="list-group">
+    {% for movie_item in wishlist_items %}
+    <div class="col-sm">
+        <img alt="{{movie_item.movie.Name}}" class="card-img" src="{{movie_item.movie.image_url}}">
+
+    </div>
+    <div class="col-sm-10">
+        <h5> {{movie_item.movie.Name}} </h5>
+
+              
+
+    </div>
+    <a class="btn btn-outline-danger" href="{% url 'remove_from_list' movie_id=movie_item.movie.id %}"
+       onclick="alert('Item removed from the cart')">Remove From Cart</a>
+
+
+    <div>
+        {% endfor%}
+        
+    </div>
+
+    {%endif%}
+
+</ul>
+<p></p>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'navfoot.html'%}
+{%block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <h3 class="mt-4">Search results</h3>
+        <hr>
+        <div class="row">
+            {% for each in object_list %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="{% url 'detail' each.id %}">
+                        <img src="{{ each.image_url }}" class="card-img-top" alt="{{ each.title }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ each.title }}</h5>
+                        <p class="card-text">{{ each.Director }}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            {% empty %}
+            <h5 class="mt-4">Nothing found</h5>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
+
+{%endblock content%}
+

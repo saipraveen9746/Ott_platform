@@ -1,0 +1,61 @@
+{% extends 'navfoot.html' %}
+{% block content%}
+{% load embed_video_tags %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css\detailview.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Detailview</title>
+</head>
+<body>
+
+
+<div class="deta1" >
+    <div class="card mb-3" style="height:500px;width:1000px;display:flex;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{object.image_url}}" class="img-fluid rounded-start" alt="..." style="height:500px;width:600px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body" style="padding-top:75px;">
+                    <div class="title1"><h1 class="card-title" style="color:blue;"><strong>{{object.title}}</strong></h1></div>
+                    <p style="color:;">Director : {{object.Director }}</p>
+                    <p class="actor1" style="color:;">Starring : {{object.Actor}}</p>
+                    <p class="card-text" style="color:;">{{object.Description}}</p>
+                    <p class="price1" style="color:;">Year : {{object.Release_year}}</p>
+                    <p class="Lang1" style="color:;">Language : {{object.Language}}</p>
+                    <p class="rating1" style="color:;">Genre :{{object.Genre}}</p>
+                    <p class="rating1" style="color:">Rating :{{object.Rating}}</p>
+
+                    
+
+                    <button type="submit" style="background-color:#1e34cc;border:none;radius:2px;"><a style=" text-decoration:none;color:white;"href="{% url 'video'%}"><b>Trailers</b></a></button>
+                   
+
+                    
+                    
+
+                   
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}
+
